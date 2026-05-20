@@ -1,0 +1,121 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins, sans-serif;
+}
+
+/* CENTER LOGIN & REGISTER */
+.center-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* BACKGROUND */
+body{
+    background: linear-gradient(135deg,#D78FEE,#85409D,#5D2F77);
+}
+
+/* LOGIN BOX */
+.login-box{
+    width:320px;
+    padding:35px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius:20px;
+    text-align:center;
+    color:white;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    margin-bottom:10px;
+}
+
+/* INPUT */
+input{
+    width:100%;
+    padding:12px;
+    margin:12px 0;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#5D2F77;
+    color:white;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#85409D;
+}
+
+/* DASHBOARD */
+.app{
+    display:flex;
+}
+
+.sidebar{
+    width:240px;
+    height:100vh;
+    background:rgba(0,0,0,0.35);
+    color:white;
+    padding:20px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+.logout{
+    background:#ff4d4d;
+}
+
+.content{
+    flex:1;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.2);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#5D2F77;
+    color:white;
+    padding:12px;
+}
+
+td{
+    background:white;
+    padding:10px;
+    text-align:center;
+}
