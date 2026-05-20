@@ -159,8 +159,22 @@ button:hover{
 
 </select>
 
-<label>Jabatan</label>
-<input type="text" name="jabatan" value="<?= $d['jabatan']; ?>" required>
+<select name="jabatan" required>
+  <option value="Ketua" <?= ($data['jabatan']=="Ketua") ? "selected" : "" ?>>Ketua</option>
+  <option value="Wakil Ketua" <?= ($data['jabatan']=="Wakil Ketua") ? "selected" : "" ?>>Wakil Ketua</option>
+  <option value="Sekretaris" <?= ($data['jabatan']=="Sekretaris") ? "selected" : "" ?>>Sekretaris</option>
+  <option value="Wakil Sekretaris" <?= ($data['jabatan']=="Wakil Sekretaris") ? "selected" : "" ?>>Wakil Sekretaris</option>
+  <option value="Bendahara" <?= ($data['jabatan']=="Bendahara") ? "selected" : "" ?>>Bendahara</option>
+  <option value="Wakil Bendahara" <?= ($data['jabatan']=="Wakil Bendahara") ? "selected" : "" ?>>Wakil Bendahara</option>
+  <option value="Koordinasi Latihan" <?= ($data['jabatan']=="Koordinasi Latihan") ? "selected" : "" ?>>Koordinasi Latihan</option>
+  <option value="Wakil Koordinasi Latihan" <?= ($data['jabatan']=="Wakil Koordinasi Latihan") ? "selected" : "" ?>>Wakil Koordinasi Latihan</option>
+  <option value="Kedisiplinan" <?= ($data['jabatan']=="Kedisiplinan") ? "selected" : "" ?>>Kedisiplinan</option>
+  <option value="Wakil Kedisiplinan" <?= ($data['jabatan']=="Wakil Kedisiplinan") ? "selected" : "" ?>>Wakil Kedisiplinan</option>
+  <option value="Dokumentasi" <?= ($data['jabatan']=="Dokumentasi") ? "selected" : "" ?>>Dokumentasi</option>
+  <option value="Wakil Dokumentasi" <?= ($data['jabatan']=="Wakil Dokumentasi") ? "selected" : "" ?>>Wakil Dokumentasi</option>
+  <option value="Anggota Biasa" <?= ($data['jabatan']=="Anggota Biasa") ? "selected" : "" ?>>Anggota Biasa</option>
+  <option value="Pembina Eskul" <?= ($data['jabatan']=="Pembina Eskul") ? "selected" : "" ?>>Pembina Eskul</option>
+</select>
 
 <label>Keaktifan</label>
 <select name="keaktifan">

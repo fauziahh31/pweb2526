@@ -168,8 +168,23 @@ required>
 </select>
 
 <label>Jabatan</label>
-
-<input type="text" name="jabatan" required>
+<select name="jabatan" required>
+  <option value="">-- Pilih Jabatan --</option>
+  <option value="Ketua">Ketua</option>
+  <option value="Wakil Ketua">Wakil Ketua</option>
+  <option value="Sekretaris">Sekretaris</option>
+  <option value="Wakil Sekretaris">Wakil Sekretaris</option>
+  <option value="Bendahara">Bendahara</option>
+  <option value="Wakil Bendahara">Wakil Bendahara</option>
+  <option value="Koordinasi Latihan">Koordinasi Latihan</option>
+  <option value="Wakil Koordinasi Latihan">Wakil Koordinasi Latihan</option>
+  <option value="Kedisiplinan">Kedisiplinan</option>
+  <option value="Wakil Kedisiplinan">Wakil Kedisiplinan</option>
+  <option value="Dokumentasi">Dokumentasi</option>
+  <option value="Wakil Dokumentasi">Wakil Dokumentasi</option>
+  <option value="Anggota Biasa">Anggota Biasa</option>
+  <option value="Pembina Eskul">Pembina Eskul</option>
+</select>
 
 <label>Keaktifan</label>
 
