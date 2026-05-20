@@ -156,9 +156,9 @@ button:hover{
 <option <?= ($d['kelas']=="12 TKI 1") ? "selected" : ""; ?>>12 TKI 1</option>
 <option <?= ($d['kelas']=="12 TKI 2") ? "selected" : ""; ?>>12 TKI 2</option>
 <option <?= ($d['kelas']=="12 TKI 3") ? "selected" : ""; ?>>12 TKI 3</option>
-
 </select>
 
+<label>Jabatan</label>
 <select name="jabatan" required>
   <option value="Ketua" <?= ($data['jabatan']=="Ketua") ? "selected" : "" ?>>Ketua</option>
   <option value="Wakil Ketua" <?= ($data['jabatan']=="Wakil Ketua") ? "selected" : "" ?>>Wakil Ketua</option>
