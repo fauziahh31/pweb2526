@@ -72,7 +72,7 @@ Data berhasil ditambahkan
 
 setTimeout(function(){
 
-window.location='dashboard.php';
+window.location='index.php';
 
 },1500);
 

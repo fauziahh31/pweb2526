@@ -8,6 +8,6 @@ mysqli_query($koneksi,
 "DELETE FROM anggota_wahana_vokalia
 WHERE id='$id'");
 
-header("location:dashboard.php");
+header("location:index.php");
 exit;
 ?>

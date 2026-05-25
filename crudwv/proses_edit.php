@@ -38,6 +38,6 @@ keaktifan='$keaktifan',
 jenis_suara='$jenis_suara'
 WHERE id='$id'");
 
-header("location:dashboard.php");
+header("location:index.php");
 exit;
 ?>
