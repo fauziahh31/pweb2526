@@ -119,3 +119,58 @@ td{
     padding:10px;
     text-align:center;
 }
+
+/* ===== FIX TABLE BIAR RAPI ===== */
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+th{
+    background:#5D2F77;
+    color:white;
+    padding:12px;
+    text-align:center;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+    background:rgba(255,255,255,0.85);
+    color:#222;
+}
+
+/* ===== BUTTON TAMBAH ===== */
+.btn{
+    display:inline-block;
+    padding:10px 15px;
+    background:#5D2F77;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    margin-bottom:15px;
+    transition:0.2s;
+}
+
+.btn:hover{
+    background:#85409D;
+}
+
+/* ===== LINK EDIT HAPUS BIAR ENAK ===== */
+.edit, .hapus{
+    padding:6px 10px;
+    border-radius:6px;
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+}
+
+.edit{
+    background:#5D2F77;
+}
+
+.hapus{
+    background:crimson;
+}
