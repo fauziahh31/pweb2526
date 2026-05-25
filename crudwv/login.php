@@ -2,7 +2,7 @@
 session_start();
 include "koneksi.php";
  
-if(isset($_SESSION['username'])){
+if(isset($_SESSION['username']) && $_SESSION['username'] != ""){
     header("location:index.php");
     exit;
 }
