@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include "koneksi.php";
 
 $nama = $_POST['nama'];
@@ -28,48 +28,32 @@ VALUES
 <style>
 
 body{
-
 background:#D78FEE;
-
 font-family:Poppins;
-
 }
 
 .notif{
-
 position:fixed;
-
 top:20px;
 right:20px;
-
 background:#85409D;
-
 color:white;
-
 padding:15px 25px;
-
 border-radius:15px;
-
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
-
 animation:muncul 0.5s;
-
 }
 
 @keyframes muncul{
 
 from{
-
 opacity:0;
 transform:translateY(-20px);
-
 }
 
 to{
-
 opacity:1;
 transform:translateY(0);
-
 }
 
 }
@@ -88,7 +72,7 @@ Data berhasil ditambahkan
 
 setTimeout(function(){
 
-window.location='index.php';
+window.location='dashboard.php';
 
 },1500);
 

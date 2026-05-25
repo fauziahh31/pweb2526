@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "koneksi.php";
 
 $id = $_GET['id'];
@@ -8,4 +9,5 @@ mysqli_query($koneksi,
 WHERE id='$id'");
 
 header("location:dashboard.php");
+exit;
 ?>
