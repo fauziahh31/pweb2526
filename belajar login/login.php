@@ -20,7 +20,7 @@ else if (isset($_POST['submit'])){
         // 🔥 TAMBAHAN PENTING INI
         $_SESSION['role'] = "admin";
 
-        header("Location: berhasil_login.php");
+        header("Location: index.php");
         exit();
 
     } else {
