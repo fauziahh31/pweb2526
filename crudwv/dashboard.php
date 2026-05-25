@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo $_SESSION['role'];
 include "koneksi.php";
 
 if(!isset($_SESSION['username'])){
