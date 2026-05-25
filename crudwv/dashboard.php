@@ -75,6 +75,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
             <i class="fa fa-home"></i> Home
         </a>
 
+        <?php if($_SESSION['role'] == 'admin'){ ?>
+
         <a href="tambah.php">
             <i class="fa fa-user-plus"></i> Tambah Anggota
         </a>
@@ -82,6 +84,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         <a class="logout" href="logout.php">
             <i class="fa fa-right-from-bracket"></i> Logout
         </a>
+
+        <?php } ?>
 
     </div>
 
@@ -92,7 +96,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         <div class="card">
 
             <h2>
-                Halo, <?= $_SESSION['nama']; ?> 👋
+                Halo, <?= $_SESSION['username']; ?> 👋
             </h2>
 
             <p>
@@ -104,9 +108,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         <!-- TABLE -->
         <div class="card">
 
+            <?php if($_SESSION['role'] == 'admin'){ ?>
+
             <a href="tambah.php" class="btn">
                 + Tambah Anggota
             </a>
+
+            <?php } ?>
 
             <table>
 
@@ -117,7 +125,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
                     <th>Jabatan</th>
                     <th>Keaktifan</th>
                     <th>Jenis Suara</th>
+
+                    <?php if($_SESSION['role'] == 'admin'){ ?>
                     <th>Aksi</th>
+                    <?php } ?>
+
                 </tr>
 
                 <?php
@@ -140,6 +152,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
                     <td><?= $d['jenis_suara']; ?></td>
 
+                    <?php if($_SESSION['role'] == 'admin'){ ?>
+
                     <td>
 
                         <div class="aksi">
@@ -160,6 +174,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
                         </div>
 
                     </td>
+
+                    <?php } ?>
 
                 </tr>
 

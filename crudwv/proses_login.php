@@ -16,7 +16,10 @@ if(isset($_POST['login'])){
 
     if($cek > 0){
 
-        $_SESSION['username'] = $username;
+        $data = mysqli_fetch_array($query);
+
+        $_SESSION['username'] = $data['username'];
+        $_SESSION['role'] = $data['role'];
 
         header("location:dashboard.php");
 
