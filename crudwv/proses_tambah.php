@@ -16,10 +16,9 @@ $jenis_suara = $_POST['jenis_suara'];
  
 mysqli_query($koneksi,
 "INSERT INTO anggota_wahana_vokalia
-(user_id, nama, kelas, jabatan, keaktifan, jenis_suara)
+(nama, kelas, jabatan, keaktifan, jenis_suara, username)
 VALUES
-('$user_id','$nama','$kelas','$jabatan','$keaktifan','$jenis_suara')");
- 
+('$nama','$kelas','$jabatan','$keaktifan','$jenis_suara','$username')");
 ?>
  
 <!DOCTYPE html>
