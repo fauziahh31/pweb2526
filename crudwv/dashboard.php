@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo $_SESSION['role'];
 include "koneksi.php";
 
 if(!isset($_SESSION['username'])){
@@ -76,11 +75,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
             <i class="fa fa-home"></i> Home
         </a>
 
-        <?php if($_SESSION['role'] == 'admin'){ ?>
-
         <a href="tambah.php">
             <i class="fa fa-user-plus"></i> Tambah Anggota
         </a>
+
+        <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){ ?>
 
         <a class="logout" href="logout.php">
             <i class="fa fa-right-from-bracket"></i> Logout
@@ -109,13 +108,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         <!-- TABLE -->
         <div class="card">
 
-            <?php if($_SESSION['role'] == 'admin'){ ?>
-
             <a href="tambah.php" class="btn">
                 + Tambah Anggota
             </a>
-
-            <?php } ?>
 
             <table>
 
@@ -127,7 +122,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
                     <th>Keaktifan</th>
                     <th>Jenis Suara</th>
 
-                    <?php if($_SESSION['role'] == 'admin'){ ?>
+                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){ ?>
                     <th>Aksi</th>
                     <?php } ?>
 
@@ -153,7 +148,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
                     <td><?= $d['jenis_suara']; ?></td>
 
-                    <?php if($_SESSION['role'] == 'admin'){ ?>
+                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){ ?>
 
                     <td>
 
