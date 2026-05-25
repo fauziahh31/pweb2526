@@ -1,18 +1,14 @@
 <?php
 session_start();
 include "koneksi.php";
-
-if(!isset($_SESSION['username'])){
-    header("location:login.php");
+ 
+if (!isset($_SESSION['username'])) {
+    header("location: login.php");
     exit;
 }
-
-if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
+ 
+if($_SESSION['role'] == 'admin'){
     $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
-} else {
-    $user = $_SESSION['username'];
-    $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia WHERE username='$user'");
-
 } else {
     $user = $_SESSION['username'];
     $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia WHERE username='$user'");
