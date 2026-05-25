@@ -2,13 +2,11 @@
 session_start();
 include "koneksi.php";
 
-$user_id = $_SESSION['user_id'];  // ← tambah ini
-$nama = $_POST['nama'];
-
-$nama = $_POST['nama'];
-$kelas = $_POST['kelas'];
-$jabatan = $_POST['jabatan'];
-$keaktifan = $_POST['keaktifan'];
+$user_id     = $_SESSION['user_id'];
+$nama        = $_POST['nama'];
+$kelas       = $_POST['kelas'];
+$jabatan     = $_POST['jabatan'];
+$keaktifan   = $_POST['keaktifan'];
 $jenis_suara = $_POST['jenis_suara'];
 
 mysqli_query($koneksi,
@@ -16,10 +14,6 @@ mysqli_query($koneksi,
 (user_id,nama,kelas,jabatan,keaktifan,jenis_suara)
 VALUES
 ('$user_id','$nama','$kelas','$jabatan','$keaktifan','$jenis_suara')");
-VALUES
-
-('$nama','$kelas','$jabatan','$keaktifan','$jenis_suara')");
-
 ?>
 
 <!DOCTYPE html>
@@ -49,17 +43,8 @@ animation:muncul 0.5s;
 }
 
 @keyframes muncul{
-
-from{
-opacity:0;
-transform:translateY(-20px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
+from{ opacity:0; transform:translateY(-20px); }
+to{ opacity:1; transform:translateY(0); }
 }
 
 </style>
@@ -73,15 +58,10 @@ Data berhasil ditambahkan
 </div>
 
 <script>
-
 setTimeout(function(){
-
-window.location='index.php';
-
-},1500);
-
+    window.location='index.php';
+}, 1500);
 </script>
 
 </body>
-
 </html>
