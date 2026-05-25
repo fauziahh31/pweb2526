@@ -7,7 +7,12 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
  
-$data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
+if($_SESSION['role'] == 'admin'){
+    $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
+} else {
+    $user = $_SESSION['username'];
+    $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia WHERE username='$user'");
+}
 ?>
  
 <!DOCTYPE html>
