@@ -1,13 +1,13 @@
 <?php
 session_start();
 include "koneksi.php";
- 
-if (!isset($_SESSION['username'])) {
-    header("location: login.php");
+
+if(!isset($_SESSION['username'])){
+    header("location:login.php");
     exit;
 }
- 
-if($_SESSION['role'] == 'admin'){
+
+if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
     $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
 } else {
     $user = $_SESSION['username'];
