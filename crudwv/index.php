@@ -65,9 +65,15 @@ $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
                     <td><?= $d['keaktifan']; ?></td>
                     <td><?= $d['jenis_suara']; ?></td>
                     <td>
-                        <a href="edit.php?id=<?= $d['id']; ?>" class="edit">Edit</a> |
-                        <a href="hapus.php?id=<?= $d['id']; ?>" class="hapus" onclick="return confirm('Yakin?')">Hapus</a>
-                    </td>
+
+<?php if($_SESSION['role'] == 'admin'){ ?>
+
+    <a href="edit.php?id=<?= $d['id']; ?>" class="edit">Edit</a> |
+    <a href="hapus.php?id=<?= $d['id']; ?>" class="hapus" onclick="return confirm('Yakin?')">Hapus</a>
+
+<?php } ?>
+
+</td>
                 </tr>
 
                 <?php } ?>
