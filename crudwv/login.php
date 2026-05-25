@@ -26,8 +26,6 @@ if(isset($_POST['login'])){
     header("location:index.php");
     exit;
 
-}
-
     }else{
 
         echo "
