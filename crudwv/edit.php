@@ -1,5 +1,12 @@
 <?php
 include "koneksi.php";
+session_start();
+include "koneksi.php";
+
+if(!isset($_SESSION['username']) || $_SESSION['role'] != 'admin'){
+    header("location:index.php");
+    exit;
+}
 
 $id = $_GET['id'];
 

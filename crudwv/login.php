@@ -17,12 +17,16 @@ if(isset($_POST['login'])){
 
     if($cek > 0){
 
-        // SESSION
-        $_SESSION['nama'] = $nama;
-        $_SESSION['username'] = $username;
+    $data = mysqli_fetch_assoc($query);
 
-        header("location:index.php");
-        exit;
+    $_SESSION['nama'] = $data['nama'];
+    $_SESSION['username'] = $data['username'];
+    $_SESSION['role'] = $data['role'];
+
+    header("location:index.php");
+    exit;
+
+}
 
     }else{
 
