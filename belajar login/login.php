@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "koneksi.php";
 
 if (isset($_SESSION['username'])){
     header("Location: berhasil_login.php");
