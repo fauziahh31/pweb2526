@@ -26,9 +26,8 @@ $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
 
     <a href="index.php">Home</a>
 
-    <?php if($_SESSION['role'] == 'admin'){ ?>
-    <a href="tambah.php">Tambah</a>
-    <?php } ?>
+    <!-- USER & ADMIN BOLEH TAMBAH -->
+    <a href="tambah.php">Tambah Data</a>
 
     <a href="logout.php">Logout</a>
 </div>
@@ -41,17 +40,19 @@ $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
 
 <div class="card">
 
-<?php if($_SESSION['role'] == 'admin'){ ?>
-<a href="tambah.php" class="btn">+ Tambah Data</a>
-<?php } ?>
-
 <table>
 <tr>
-<th>No</th><th>Nama</th><th>Kelas</th><th>Jabatan</th><th>Keaktifan</th><th>Suara</th>
+<th>No</th>
+<th>Nama</th>
+<th>Kelas</th>
+<th>Jabatan</th>
+<th>Keaktifan</th>
+<th>Suara</th>
 
 <?php if($_SESSION['role'] == 'admin'){ ?>
 <th>Aksi</th>
 <?php } ?>
+
 </tr>
 
 <?php $no=1; while($d=mysqli_fetch_assoc($data)){ ?>
@@ -66,8 +67,8 @@ $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
 
 <?php if($_SESSION['role'] == 'admin'){ ?>
 <td>
-<a href="edit.php?id=<?= $d['id']; ?>" class="edit">Edit</a>
-<a href="hapus.php?id=<?= $d['id']; ?>" class="hapus">Hapus</a>
+<a href="edit.php?id=<?= $d['id']; ?>">Edit</a>
+<a href="hapus.php?id=<?= $d['id']; ?>">Hapus</a>
 </td>
 <?php } ?>
 
