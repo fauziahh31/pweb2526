@@ -1,6 +1,12 @@
 <?php
 session_start();
 include "koneksi.php";
+
+/* 🔒 SECURITY: hanya admin yang boleh akses */
+if(!isset($_SESSION['username']) || $_SESSION['role'] != 'admin'){
+    header("location:index.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -84,18 +90,11 @@ button:hover{
 <form method="post" action="proses_tambah.php">
 
 <label>Nama</label>
-
-<input 
-type="text" 
-name="nama" 
-value="<?= $_SESSION['nama']; ?>"
-required>
+<input type="text" name="nama" required>
 
 <label>Kelas</label>
+<select name="kelas" required>
 
-<select name="kelas">
-
-<!-- TJKT -->
 <option>10 TJKT 1</option>
 <option>10 TJKT 2</option>
 <option>10 TJKT 3</option>
@@ -109,7 +108,6 @@ required>
 <option>12 TJKT 2</option>
 <option>12 TJKT 3</option>
 
-<!-- KULINER -->
 <option>10 Kuliner 1</option>
 <option>10 Kuliner 2</option>
 <option>10 Kuliner 3</option>
@@ -129,7 +127,6 @@ required>
 <option>12 Kuliner 4</option>
 <option>12 Kuliner 5</option>
 
-<!-- KECANTIKAN SPA -->
 <option>10 Kecantikan SPA 1</option>
 <option>10 Kecantikan SPA 2</option>
 
@@ -139,7 +136,6 @@ required>
 <option>12 Kecantikan SPA 1</option>
 <option>12 Kecantikan SPA 2</option>
 
-<!-- DPB -->
 <option>10 DPB 1</option>
 <option>10 DPB 2</option>
 <option>10 DPB 3</option>
@@ -152,7 +148,6 @@ required>
 <option>12 DPB 2</option>
 <option>12 DPB 3</option>
 
-<!-- TKI -->
 <option>10 TKI 1</option>
 <option>10 TKI 2</option>
 <option>10 TKI 3</option>
@@ -187,30 +182,24 @@ required>
 </select>
 
 <label>Keaktifan</label>
-
-<select name="keaktifan">
+<select name="keaktifan" required>
 <option>Anggota Aktif</option>
 <option>Alumni</option>
 </select>
 
 <label>Jenis Suara</label>
-
-<select name="jenis_suara">
+<select name="jenis_suara" required>
 <option>Sopran</option>
 <option>Alto</option>
 <option>Tenor</option>
 <option>Bass</option>
 </select>
 
-<button type="submit">
-SIMPAN
-</button>
+<button type="submit">SIMPAN</button>
 
 </form>
 
-<a href="dashboard.php" class="kembali">
-← Kembali ke Dashboard
-</a>
+<a href="index.php" class="kembali">← Kembali ke Dashboard</a>
 
 </div>
 

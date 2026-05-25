@@ -1,5 +1,12 @@
 <?php
+session_start();
 include "koneksi.php";
+
+/* 🔒 hanya admin boleh akses */
+if(!isset($_SESSION['username']) || $_SESSION['role'] != 'admin'){
+    header("location:index.php");
+    exit;
+}
 
 $id = $_GET['id'];
 
@@ -18,7 +25,7 @@ $d = mysqli_fetch_array($data);
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
+/* CSS kamu TETAP, tidak diubah */
 *{
     margin:0;
     padding:0;
@@ -84,7 +91,6 @@ button{
 button:hover{
     background:#85409D;
 }
-
 </style>
 
 </head>
@@ -124,31 +130,18 @@ button:hover{
 <select name="jabatan" required>
 
 <option value="Ketua" <?= ($d['jabatan']=="Ketua") ? "selected" : "" ?>>Ketua</option>
-
 <option value="Wakil Ketua" <?= ($d['jabatan']=="Wakil Ketua") ? "selected" : "" ?>>Wakil Ketua</option>
-
 <option value="Sekretaris" <?= ($d['jabatan']=="Sekretaris") ? "selected" : "" ?>>Sekretaris</option>
-
 <option value="Wakil Sekretaris" <?= ($d['jabatan']=="Wakil Sekretaris") ? "selected" : "" ?>>Wakil Sekretaris</option>
-
 <option value="Bendahara" <?= ($d['jabatan']=="Bendahara") ? "selected" : "" ?>>Bendahara</option>
-
 <option value="Wakil Bendahara" <?= ($d['jabatan']=="Wakil Bendahara") ? "selected" : "" ?>>Wakil Bendahara</option>
-
 <option value="Koordinasi Latihan" <?= ($d['jabatan']=="Koordinasi Latihan") ? "selected" : "" ?>>Koordinasi Latihan</option>
-
 <option value="Wakil Koordinasi Latihan" <?= ($d['jabatan']=="Wakil Koordinasi Latihan") ? "selected" : "" ?>>Wakil Koordinasi Latihan</option>
-
 <option value="Kedisiplinan" <?= ($d['jabatan']=="Kedisiplinan") ? "selected" : "" ?>>Kedisiplinan</option>
-
 <option value="Wakil Kedisiplinan" <?= ($d['jabatan']=="Wakil Kedisiplinan") ? "selected" : "" ?>>Wakil Kedisiplinan</option>
-
 <option value="Dokumentasi" <?= ($d['jabatan']=="Dokumentasi") ? "selected" : "" ?>>Dokumentasi</option>
-
 <option value="Wakil Dokumentasi" <?= ($d['jabatan']=="Wakil Dokumentasi") ? "selected" : "" ?>>Wakil Dokumentasi</option>
-
 <option value="Anggota Biasa" <?= ($d['jabatan']=="Anggota Biasa") ? "selected" : "" ?>>Anggota Biasa</option>
-
 <option value="Pembina Eskul" <?= ($d['jabatan']=="Pembina Eskul") ? "selected" : "" ?>>Pembina Eskul</option>
 
 </select>
@@ -156,40 +149,22 @@ button:hover{
 <label>Keaktifan</label>
 <select name="keaktifan">
 
-<option <?= ($d['keaktifan']=="Anggota Aktif") ? "selected" : ""; ?>>
-Anggota Aktif
-</option>
-
-<option <?= ($d['keaktifan']=="Alumni") ? "selected" : ""; ?>>
-Alumni
-</option>
+<option <?= ($d['keaktifan']=="Anggota Aktif") ? "selected" : ""; ?>>Anggota Aktif</option>
+<option <?= ($d['keaktifan']=="Alumni") ? "selected" : ""; ?>>Alumni</option>
 
 </select>
 
 <label>Jenis Suara</label>
 <select name="jenis_suara">
 
-<option <?= ($d['jenis_suara']=="Sopran") ? "selected" : ""; ?>>
-Sopran
-</option>
-
-<option <?= ($d['jenis_suara']=="Alto") ? "selected" : ""; ?>>
-Alto
-</option>
-
-<option <?= ($d['jenis_suara']=="Tenor") ? "selected" : ""; ?>>
-Tenor
-</option>
-
-<option <?= ($d['jenis_suara']=="Bass") ? "selected" : ""; ?>>
-Bass
-</option>
+<option <?= ($d['jenis_suara']=="Sopran") ? "selected" : ""; ?>>Sopran</option>
+<option <?= ($d['jenis_suara']=="Alto") ? "selected" : ""; ?>>Alto</option>
+<option <?= ($d['jenis_suara']=="Tenor") ? "selected" : ""; ?>>Tenor</option>
+<option <?= ($d['jenis_suara']=="Bass") ? "selected" : ""; ?>>Bass</option>
 
 </select>
 
-<button type="submit">
-UPDATE
-</button>
+<button type="submit">UPDATE</button>
 
 </form>
 
