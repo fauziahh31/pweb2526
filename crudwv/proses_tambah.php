@@ -2,6 +2,9 @@
 session_start();
 include "koneksi.php";
 
+$user_id = $_SESSION['user_id'];  // ← tambah ini
+$nama = $_POST['nama'];
+
 $nama = $_POST['nama'];
 $kelas = $_POST['kelas'];
 $jabatan = $_POST['jabatan'];
@@ -10,8 +13,9 @@ $jenis_suara = $_POST['jenis_suara'];
 
 mysqli_query($koneksi,
 "INSERT INTO anggota_wahana_vokalia
-(nama,kelas,jabatan,keaktifan,jenis_suara)
-
+(user_id,nama,kelas,jabatan,keaktifan,jenis_suara)
+VALUES
+('$user_id','$nama','$kelas','$jabatan','$keaktifan','$jenis_suara')");
 VALUES
 
 ('$nama','$kelas','$jabatan','$keaktifan','$jenis_suara')");
