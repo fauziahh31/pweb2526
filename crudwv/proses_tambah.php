@@ -9,11 +9,15 @@ $jabatan     = $_POST['jabatan'];
 $keaktifan   = $_POST['keaktifan'];
 $jenis_suara = $_POST['jenis_suara'];
 
-mysqli_query($koneksi,
+$result = mysqli_query($koneksi,
 "INSERT INTO anggota_wahana_vokalia
 (user_id,nama,kelas,jabatan,keaktifan,jenis_suara)
 VALUES
 ('$user_id','$nama','$kelas','$jabatan','$keaktifan','$jenis_suara')");
+
+if(!$result){
+    die("Error: " . mysqli_error($koneksi));
+}
 ?>
 
 <!DOCTYPE html>
