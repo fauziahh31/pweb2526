@@ -2,6 +2,11 @@
 session_start();
 include "koneksi.php";
 
+// Pastikan user sudah login
+if (!isset($_SESSION['user_id'])) {
+    die("Error: Anda belum login!");
+}
+
 $user_id     = $_SESSION['user_id'];
 $nama        = $_POST['nama'];
 $kelas       = $_POST['kelas'];
@@ -9,16 +14,16 @@ $jabatan     = $_POST['jabatan'];
 $keaktifan   = $_POST['keaktifan'];
 $jenis_suara = $_POST['jenis_suara'];
 
-$result = mysqli_query($koneksi,
-"INSERT INTO anggota_wahana_vokalia
-(user_id,nama,kelas,jabatan,keaktifan,jenis_suara)
-VALUES
-('$user_id','$nama','$kelas','$jabatan','$keaktifan','$jenis_suara')");
+// Query yang bersih
+$sql = "INSERT INTO anggota_wahana_vokalia (user_id, nama, kelas, jabatan, keaktifan, jenis_suara) 
+        VALUES ('$user_id', '$nama', '$kelas', '$jabatan', '$keaktifan', '$jenis_suara')";
+
+$result = mysqli_query($koneksi, $sql);
 
 if(!$result){
-    die("Error: " . mysqli_error($koneksi));
+    // Kalau error, tampilkan supaya kita tahu kenapa
+    die("Error SQL: " . mysqli_error($koneksi));
 }
-
 ?>
 
 <!DOCTYPE html>
