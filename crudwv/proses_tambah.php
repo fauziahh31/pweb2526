@@ -18,6 +18,7 @@ VALUES
 if(!$result){
     die("Error: " . mysqli_error($koneksi));
 }
+
 ?>
 
 <!DOCTYPE html>
