@@ -7,21 +7,23 @@ $password = $_POST['password'];
 
 $query = mysqli_query($koneksi, "SELECT * FROM users WHERE username='$username'");
 
-if(mysqli_num_rows($query) > 0){
+// Cek apakah username ada?
+if(mysqli_num_rows($query) > 0) {
     $data = mysqli_fetch_assoc($query);
-
-    // Kita bandingkan password apa adanya
-    if($password == $data['password']){
+    
+    // Sekarang kita bandingkan dan tampilkan hasilnya ke layar (debug)
+    if($password == $data['password']) {
+        echo "Login Berhasil! Username cocok, Password cocok.";
         $_SESSION['user_id']  = $data['id'];
         $_SESSION['username'] = $data['username'];
         $_SESSION['role']     = $data['role'];
-
-        header("Location: index.php");
-        exit;
+        // header("Location: index.php"); // Matikan dulu biar kita bisa lihat tulisan di atas
     } else {
-        echo "<script>alert('Password salah!'); window.location='login.php';</script>";
+        echo "Password salah!<br>";
+        echo "Yang kamu ketik: " . $password . "<br>";
+        echo "Yang ada di database: " . $data['password'];
     }
 } else {
-    echo "<script>alert('Username tidak terdaftar!'); window.location='login.php';</script>";
+    echo "Username '" . $username . "' tidak ditemukan di database!";
 }
 ?>
