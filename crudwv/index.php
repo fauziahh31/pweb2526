@@ -53,9 +53,8 @@ $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia WHERE user_
     <div class="content">
  
         <div class="topbar">
-            <h3>Selamat datang, <?= $_SESSION['username']; ?> 👋
-           <small style="font-size:13px; opacity:0.7;">(<?= $_SESSION['role'] == 'admin' ? 'Admin' : 'Anggota'; ?>)</small>
-        </div>
+    <h3>Selamat datang di Sistem Informasi Kami 👋</h3>
+</div>
  
         <div class="card">
  
