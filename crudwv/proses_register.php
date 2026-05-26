@@ -23,7 +23,7 @@ if(isset($_POST['register'])){
  
         mysqli_query($koneksi,
         "INSERT INTO users(username, password, role)
-        VALUES('$username', '$password', 'guru')");
+        VALUES('$username', '$password', 'anggota')");
  
         echo "
         <script>
