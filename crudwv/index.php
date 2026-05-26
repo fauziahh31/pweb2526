@@ -11,7 +11,7 @@ if($_SESSION['role'] == 'admin'){
     $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia");
 } else {
     $user = $_SESSION['username'];
-    $data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia WHERE username='$user'");
+$data = mysqli_query($koneksi, "SELECT * FROM anggota_wahana_vokalia WHERE user_id='{$_SESSION['user_id']}'");
 }
 ?>
  
@@ -54,7 +54,7 @@ if($_SESSION['role'] == 'admin'){
  
         <div class="topbar">
             <h3>Selamat datang, <?= $_SESSION['username']; ?> 👋
-            <small style="font-size:13px; opacity:0.7;">(<?= $_SESSION['role']; ?>)</small></h3>
+           <small style="font-size:13px; opacity:0.7;">(<?= $_SESSION['role'] == 'admin' ? 'Admin' : 'Anggota'; ?>)</small>
         </div>
  
         <div class="card">
